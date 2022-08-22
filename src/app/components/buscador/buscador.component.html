@@ -1,0 +1,22 @@
+<h1>Buscando: <small>{{nameHero | uppercase}}</small></h1>
+<hr>
+
+<div *ngIf="heroes.length==0" class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existe resultados con el término: {{nameHero | uppercase}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+  <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i=index">
+    <img src={{heroe.img}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{heroe.nombre}}</h5>
+      <p class="card-text">{{heroe.bio}}</p>
+      <p class="card-text"><small class="text-muted">Updated: {{heroe.aparicion}}</small></p>
+    </div>
+  </div>
+</div>
+
